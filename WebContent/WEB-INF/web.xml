@@ -3,7 +3,7 @@
   <display-name>jsp-app1</display-name>
   
   <welcome-file-list>
-    <welcome-file>main.html</welcome-file>
+    <welcome-file>main.jsp</welcome-file>
   </welcome-file-list>
   
 </web-app>
