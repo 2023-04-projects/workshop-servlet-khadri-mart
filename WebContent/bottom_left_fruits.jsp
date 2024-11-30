@@ -1,6 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
-   <body>  
-	<table> 
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table> 
           <thead><h2>Fruits</h2></thead>
           <tbody>
 	   <tr><td><a href="bottom_right_fruits_add.html" target="bottom_right">add</a></td></tr>
@@ -9,5 +16,5 @@
 	   <tr><td><a href="bottom_right_fruits_viewall.html" target="bottom_right">viewall</a></td></tr>
 	   </tbody>
         </table>
-   </body>
+</body>
 </html>

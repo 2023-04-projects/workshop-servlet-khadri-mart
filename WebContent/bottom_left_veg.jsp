@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+		<thead>
+			<h2>Vegetables details</h2>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="bottom_right_gro_add.html" target="bottom_right">add</a></td>
+			</tr>
+			<tr>
+				<td><a href="bottom_right_gro_modify.html"
+					target="bottom_right">modify-static</a></td>
+			</tr>
+			<tr>
+				<td><a href="gromodify" target="bottom_right">modify-dynamic</a></td>
+			</tr>
+			<tr>
+				<td><a href="bottom_right_gro_view.html" target="bottom_right">view
+				</a></td>
+			</tr>
+			<tr>
+				<td><a href="bottom_right_gro_viewall.html"
+					target="bottom_right">viewall</a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
