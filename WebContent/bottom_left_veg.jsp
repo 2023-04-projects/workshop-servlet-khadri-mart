@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
 </head>
 <body>
 <table>
@@ -17,10 +16,7 @@
 			</tr>
 			<tr>
 				<td><a href="bottom_right_gro_modify.html"
-					target="bottom_right">modify-static</a></td>
-			</tr>
-			<tr>
-				<td><a href="gromodify" target="bottom_right">modify-dynamic</a></td>
+					target="bottom_right">modify</a></td>
 			</tr>
 			<tr>
 				<td><a href="bottom_right_gro_view.html" target="bottom_right">view
