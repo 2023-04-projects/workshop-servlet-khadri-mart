@@ -9,7 +9,7 @@
 <body>
 <div align="center">
 	 <table>
-           <h1 style ="color:red;">KHADRI STORE</h1>
+           <h1 style ="color:red;">KADRI STORE</h1>
 	 </table>
 	</div>
 </body>
