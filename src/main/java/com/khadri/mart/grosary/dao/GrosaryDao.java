@@ -100,10 +100,10 @@ public class GrosaryDao {
 			con = getConnection();
 			pstmt = con.prepareStatement("UPDATE grosary SET qty=?, price=? WHERE name=?");
 
-			pstmt.setString(1, form.getGrosaryName());
-			pstmt.setInt(2, form.getGrosaryQty());
+			pstmt.setInt(1, form.getGrosaryQty());
+			pstmt.setDouble(2, form.getGrosaryPrice());
+			pstmt.setString(3, form.getGrosaryName());
 
-			pstmt.setDouble(3, form.getGrosaryPrice());
 
 			result = pstmt.executeUpdate();
 			System.out.println(result + " record modified successfully!");

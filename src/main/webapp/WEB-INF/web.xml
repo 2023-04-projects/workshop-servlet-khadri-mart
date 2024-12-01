@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="4.0">
 	<display-name>workshop-servlet-khadri-mart</display-name>
 	<welcome-file-list>
-		<welcome-file>main.html</welcome-file>
+		<welcome-file>main.jsp</welcome-file>
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>groadd</servlet-name>
@@ -62,6 +62,14 @@
 	<servlet-mapping>
 		<servlet-name>modifypageJsp</servlet-name>
 		<url-pattern>/grosary_modify_page</url-pattern>
+	</servlet-mapping>
+    <servlet>
+		<servlet-name>deletepageJsp</servlet-name>
+		<jsp-file>/grosary_delete_page.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deletepageJsp</servlet-name>
+		<url-pattern>/grosary_delete_page</url-pattern>
 	</servlet-mapping>
     
 	<servlet>

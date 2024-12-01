@@ -38,26 +38,22 @@
 			</tr>
 		</thead>
 		<tbody>
-			<%
-				if (!listOfGrossaries.isEmpty()) {
-					for (GrosaryForm eachForm : listOfGrossaries) {
-			%>
-			<tr>
-				<td><%=eachForm.getGrosaryName()%></td>
-				<td><%=eachForm.getGrosaryQty()%></td>
-				<td><%=eachForm.getGrosaryPrice()%></td>
-				<td>
-					<form action="grodelete" method="post">
-						<input type="hidden" name="grosaryName"
-							value="<%=eachForm.getGrosaryName()%>"><br> <input
-							type="submit" value="Delete">
-					</form>
-				</td>
-			</tr>
-			<%
-				}
-				} else {
-			%>
+			 <%
+                for (GrosaryForm eachForm : listOfGrossaries) {
+            %>
+                <tr>
+                    <td>
+                        <a href="grosary_delete_page.jsp?name=<%= eachForm.getGrosaryName() %>&qty=<%= eachForm.getGrosaryQty() %>&price=<%= eachForm.getGrosaryPrice() %>" target="bottom_right">
+                            <%= eachForm.getGrosaryName() %>
+                        </a>
+                    </td>
+                    <td><%= eachForm.getGrosaryQty() %></td>
+                    <td><%= eachForm.getGrosaryPrice() %></td>
+                </tr>
+            <%
+                }
+                if (listOfGrossaries.isEmpty()) {
+            %>
 			<tr>
 				<td colspan="4">No items found for "<%=searchName%>".
 				</td>

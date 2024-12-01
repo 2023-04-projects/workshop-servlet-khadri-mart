@@ -26,7 +26,7 @@ public class ModifyGrosaryServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		System.out.println("Entered into ModifyGrosaryServlet doPost(-,-)");
 		String name = req.getParameter("name");
-		String qty = req.getParameter("qty");
+		String qty = req.getParameter("quantity");
 		String price = req.getParameter("price");
 		if (qty != null && !qty.isEmpty()) {
 			try {
@@ -52,7 +52,7 @@ public class ModifyGrosaryServlet extends HttpServlet {
 
 		int result = dao.updateGrosary(form);
 		PrintWriter pw = resp.getWriter();
-		if (result == 1) {
+		if (result > 0) {
 			pw.println(result + " Grosary updated successfully");
 		} else {
 			pw.println("####### Something went wrong #######");
