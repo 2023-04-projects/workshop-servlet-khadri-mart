@@ -11,22 +11,27 @@
 	flex-direction: column;
 	height: 100vh;
 }
+
 .top {
 	height: 10%;
 }
+
 .main-content {
 	display: flex;
 	flex-grow: 1;
 }
+
 .left-pane {
 	width: 20%;
 	display: flex;
 	flex-direction: column;
 }
+
 .bottom-left-frame {
 	flex: 1;
 	border: none;
 }
+
 .right-pane {
 	width: 80%;
 }

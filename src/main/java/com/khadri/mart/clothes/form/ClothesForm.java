@@ -11,17 +11,13 @@ public class ClothesForm {
 		this.itemQty = itemQty;
 		this.itemPrice = itemPrice;
 	}
-
 	public String getItemName() {
 		return itemName;
 	}
-
 	public int getItemQty() {
 		return itemQty;
 	}
-
 	public Double getItemPrice() {
 		return itemPrice;
 	}
-
 }

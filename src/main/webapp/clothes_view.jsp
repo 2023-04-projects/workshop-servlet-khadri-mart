@@ -46,15 +46,15 @@
 			</tr>
 			<%
 				}
-            if (listOfClothes.isEmpty() && searchName != null) {
+				if (listOfClothes.isEmpty() && searchName != null) {
 			%>
 			<tr>
 				<td colspan="3">No items found for "<%=searchName%>".
 				</td>
 			</tr>
 			<%
-                }
-            %>
+				}
+			%>
 		</tbody>
 	</table>
 </body>
