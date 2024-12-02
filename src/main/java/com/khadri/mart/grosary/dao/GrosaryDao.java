@@ -18,10 +18,8 @@ public class GrosaryDao {
 	private String Url;
 	private String User;
 	private String Password;
-	PreparedStatement pstmt ;
+	PreparedStatement pstmt;
 	Statement stmt;
-
-
 
 	public GrosaryDao(ServletContext context) {
 		this.Url = context.getInitParameter("Url");
@@ -104,7 +102,6 @@ public class GrosaryDao {
 			pstmt.setInt(1, form.getGrosaryQty());
 			pstmt.setDouble(2, form.getGrosaryPrice());
 			pstmt.setString(3, form.getGrosaryName());
-
 
 			result = pstmt.executeUpdate();
 			System.out.println(result + " record modified successfully!");

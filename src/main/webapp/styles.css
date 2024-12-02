@@ -20,12 +20,15 @@
 	color: white;
 }
 
-body{
-  	background-color: #ccc; /* Dark grey background on mouse-over */
+body {
+	background-color: #ccc; /* Dark grey background on mouse-over */
 }
-th{
-  	background-color: #04AA6D; /* Add a green color to the "active/current" link */
+
+th {
+	background-color: #04AA6D;
+	/* Add a green color to the "active/current" link */
 }
-#nrf{
+
+#nrf {
 	background-color: #f54242; /* Dark grey background on mouse-over */
 }

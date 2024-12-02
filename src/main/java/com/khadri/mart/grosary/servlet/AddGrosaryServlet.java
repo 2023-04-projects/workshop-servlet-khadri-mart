@@ -2,24 +2,20 @@ package com.khadri.mart.grosary.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.khadri.mart.grosary.form.GrosaryForm;
 import com.khadri.mart.grosary.dao.GrosaryDao;
 
-
 public class AddGrosaryServlet extends HttpServlet {
 
-	
 	private static final long serialVersionUID = 1L;
 	private GrosaryDao dao;
 
 	@Override
-	public void init()  {
+	public void init() {
 		ServletContext context = getServletContext();
 		dao = new GrosaryDao(context);
 	}

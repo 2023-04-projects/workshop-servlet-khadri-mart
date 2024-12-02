@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
 	<display-name>workshop-servlet-khadri-mart</display-name>
@@ -16,11 +16,11 @@
 		<url-pattern>/groadd</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>jspadd</servlet-name>
+		<servlet-name>addjsp</servlet-name>
 		<jsp-file>/groAdd.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>jspadd</servlet-name>
+		<servlet-name>addjsp</servlet-name>
 		<url-pattern>/grosary_add</url-pattern>
 	</servlet-mapping>
 	<servlet>
@@ -48,19 +48,19 @@
 		<url-pattern>/grosary_modify_page</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>jspview</servlet-name>
+		<servlet-name>viewjsp</servlet-name>
 		<jsp-file>/groView.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>jspview</servlet-name>
+		<servlet-name>viewjsp</servlet-name>
 		<url-pattern>/grosary_view</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>groviewallJsp</servlet-name>
+		<servlet-name>viewallJsp</servlet-name>
 		<jsp-file>/groViewAll.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>groviewallJsp</servlet-name>
+		<servlet-name>viewallJsp</servlet-name>
 		<url-pattern>/grosary_viewAll</url-pattern>
 	</servlet-mapping>
 	<servlet>
