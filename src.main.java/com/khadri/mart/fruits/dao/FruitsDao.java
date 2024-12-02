@@ -103,6 +103,18 @@ public class FruitsDao {
 		return listOfClothes;
 
 	}
+	public int deleteFruits(String name) {
+        int result = 0;
+        try {
+         con = getConnection();
+        PreparedStatement pstmt = con.prepareStatement("delete from fruits where name=?");
+          pstmt.setString(1, name);
+            result = pstmt.executeUpdate();
+        } catch (Exception e) {
+   e.printStackTrace();
+  }
+  return result;
+    }
 		  
 	}
 

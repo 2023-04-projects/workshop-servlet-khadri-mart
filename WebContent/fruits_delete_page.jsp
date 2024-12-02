@@ -4,7 +4,7 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Modify Fruits</title>
+    <title>Delete Product</title>
 </head>
 <body>
     <%
@@ -12,7 +12,7 @@
         String qty = request.getParameter("item_qty");
         String price = request.getParameter("item_price");
     %>
-    <form action="fruitsmodify" method="post"> 
+    <form action="fruitsdelete" method="post"> 
         <table border="1">
             <tbody>
                 <tr>
@@ -32,7 +32,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit" value="Modify">
+                        <input type="submit" value="Delete">
                     </td>
                 </tr>
             </tbody>

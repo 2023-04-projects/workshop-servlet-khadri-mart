@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <table> 
@@ -14,6 +14,7 @@
 	   <tr><td><a href="fruits_modify.jsp" target="bottom_right">modify</a></td></tr>
 	   <tr><td><a href="fruits_view.jsp"target="bottom_right">view</a></td></tr>
 	   <tr><td><a href="fruits_viewall.jsp" target="bottom_right">viewall</a></td></tr>
+	   <tr><td><a href="fruits_delete.jsp" target="bottom_right">Delete</a></td></tr>
 	   </tbody>
         </table>
 </body>

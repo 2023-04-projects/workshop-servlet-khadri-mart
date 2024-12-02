@@ -36,13 +36,6 @@ public class FruitsModifyServlet extends HttpServlet {
 	            String paramName = en.nextElement();
 	            System.out.println(paramName + ": " + req.getParameter(paramName));
 	        }
-
-	        
-	        System.out.println("item_name: " + name);
-	        System.out.println("item_qty: " + qtyStr);
-	        System.out.println("item_price: " + priceStr);
-
-
 	        PrintWriter pw = resp.getWriter();
 	        
 	        if (name == null || name.trim().isEmpty()) {
@@ -57,7 +50,6 @@ public class FruitsModifyServlet extends HttpServlet {
 	            pw.println("@@@@@ Price is missing @@@@@");
 	            return;
 	        }
-
 	        try {
 	            int qty = Integer.parseInt(qtyStr);
 	            double price = Double.parseDouble(priceStr);

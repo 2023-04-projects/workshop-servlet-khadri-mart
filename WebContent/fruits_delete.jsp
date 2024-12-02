@@ -8,11 +8,11 @@
 <html>
 <head>
 <link rel='stylesheet' type='text/css' href='styles.css' />
-    <title>Modify Fruits Items</title>
+    <title>Delete Fruits Items</title>
 </head>
 <body>
     <h2>Search Fruits Item</h2>
-    <form action="fruits_modify" method="get">
+    <form action="fruits_delete" method="get">
         <table>
             <tr>
                 <td>Item Name: <input type="text" name="item_name"></td>
@@ -46,7 +46,7 @@
             %>
                 <tr>
                     <td>
-                        <a href="fruits_modify_page.jsp?item_name=<%= eachForm.getItemName() %>&item_qty=<%= eachForm.getItemQty() %>&item_price=<%= eachForm.getItemPrice() %>" target="bottom_right"> 
+                        <a href="fruits_delete_page.jsp?item_name=<%= eachForm.getItemName() %>&item_qty=<%= eachForm.getItemQty() %>&item_price=<%= eachForm.getItemPrice() %>" target="bottom_right"> 
                             <%= eachForm.getItemName() %> 
                         </a>
                     </td>

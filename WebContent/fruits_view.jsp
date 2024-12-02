@@ -7,19 +7,19 @@
 <%
 	ServletContext context = application; 
     FruitsDao dao = new FruitsDao(context);
-    List<FruitsForm> listOfClothes = new ArrayList<>();
+    List<FruitsForm> listOfFruits = new ArrayList<>();
 
     String searchName = request.getParameter("item_name");
 
     if (searchName != null && !searchName.trim().isEmpty()) {
-    	listOfClothes = dao.selectFruits(searchName.trim());
+    	listOfFruits = dao.selectFruits(searchName.trim());
     }
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <link rel='stylesheet' type='text/css' href='styles.css' />
-    <title>View Clothes Items</title>
+    <title>View Fruits Items</title>
 </head>
 <body>
     <h2>View Fruits </h2>
@@ -39,7 +39,7 @@
         </thead>
         <tbody>
             <%
-                for (FruitsForm eachForm : listOfClothes) {
+                for (FruitsForm eachForm : listOfFruits) {
             %>
             <tr>
                 <td><%= eachForm.getItemName() %></td>
