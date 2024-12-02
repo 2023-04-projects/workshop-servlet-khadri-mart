@@ -10,10 +10,10 @@
 <table> 
           <thead><h2>Fruits</h2></thead>
           <tbody>
-	   <tr><td><a href="bottom_right_fruits_add.html" target="bottom_right">add</a></td></tr>
-	   <tr><td><a href="bottom_right_fruits_modify.html" target="bottom_right">modify</a></td></tr>
-	   <tr><td><a href="bottom_right_fruits_view.html"target="bottom_right">view</a></td></tr>
-	   <tr><td><a href="bottom_right_fruits_viewall.html" target="bottom_right">viewall</a></td></tr>
+	   <tr><td><a href="fruits_add.jsp" target="bottom_right">add</a></td></tr>
+	   <tr><td><a href="fruits_modify.jsp" target="bottom_right">modify</a></td></tr>
+	   <tr><td><a href="fruits_view.jsp"target="bottom_right">view</a></td></tr>
+	   <tr><td><a href="fruits_viewall.jsp" target="bottom_right">viewall</a></td></tr>
 	   </tbody>
         </table>
 </body>
