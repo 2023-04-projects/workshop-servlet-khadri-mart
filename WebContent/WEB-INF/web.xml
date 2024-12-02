@@ -10,7 +10,7 @@
 	</welcome-file-list>
 	<servlet>
 		<servlet-name>fruadd</servlet-name>
-		<servlet-class>com.khadri.mart.fruits.add.servlet.FruitsAddServlet</servlet-class>
+		<servlet-class>com.khadri.mart.fruits.servlet.FruitsAddServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>fruadd</servlet-name>
@@ -18,18 +18,18 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>fruitsmodifyservlet</servlet-name>
-		<servlet-class>com.khadri.mart.fruits.modify.servlet.FruitsModifyServlet</servlet-class>
+		<servlet-class>com.khadri.mart.fruits.servlet.FruitsModifyServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>fruitsmodifyservlet</servlet-name>
 		<url-pattern>/fruitsmodify</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>fruitsdeleteyservlet</servlet-name>
-		<servlet-class>com.khadri.mart.fruits.delete.servlet.FruitDeleteServlet</servlet-class>
+		<servlet-name>fruitsdeleteservlet</servlet-name>
+		<servlet-class>com.khadri.mart.fruits.servlet.FruitDeleteServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>fruitsdeleteyservlet</servlet-name>
+		<servlet-name>fruitsdeleteservlet</servlet-name>
 		<url-pattern>/fruitsdelete</url-pattern>
 	</servlet-mapping>
 	<servlet>

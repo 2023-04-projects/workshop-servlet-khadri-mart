@@ -1,4 +1,4 @@
-package com.khadri.mart.fruits.view.servlet;
+package com.khadri.mart.fruits.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;

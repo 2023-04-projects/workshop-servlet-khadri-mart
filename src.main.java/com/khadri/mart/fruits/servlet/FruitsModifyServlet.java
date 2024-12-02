@@ -1,4 +1,4 @@
-package com.khadri.mart.fruits.modify.servlet;
+package com.khadri.mart.fruits.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -56,7 +56,7 @@ public class FruitsModifyServlet extends HttpServlet {
 
 	            int result = dao.updateFruitsItem(name, qty, price);
 
-	            if (result == 1) {
+	            if (result >0) {
 	                pw.println(result + " Fruits Item Updated Successfully!!!!!");
 	            } else {
 	                pw.println("@@@@@ Something went wrong while updating the item @@@@@");
