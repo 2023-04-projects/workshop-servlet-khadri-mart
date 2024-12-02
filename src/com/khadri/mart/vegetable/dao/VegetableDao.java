@@ -37,7 +37,7 @@ public class VegetableDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			Connection con = DriverManager.getConnection("jdbc:mySQL://localhost:3306/2024_batch", "root", "Salman@23");
+			Connection con = getConnection();
 
 			PreparedStatement pstmt = con.prepareStatement("insert into Vegetable values(?,?,?)");
 			pstmt.setString(1, form.getVegName());
@@ -51,17 +51,33 @@ public class VegetableDao {
 		}
 		return result;
 	}
+	public int updateVegetables(String name, int qty, double price) {
+		int rowsUpdated = 0;
+		try {
+			con = getConnection();
+			PreparedStatement preparedStatement = con
+					.prepareStatement("UPDATE vegetable SET qty = ?, price = ? WHERE name = ?");
+			preparedStatement.setInt(1, qty);
+			preparedStatement.setDouble(2, price);
+			preparedStatement.setString(3, name);
+			
+			rowsUpdated = preparedStatement.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowsUpdated;
+	}
 
-	public List<VegetableForm> selectVegetables(String vName) {
+	public List<VegetableForm> selectVegetables(String veg_name) {
 		System.out.println("VegetableDao selectVegetable(-)");
 		List<VegetableForm> listOfData = new ArrayList<>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			Connection con = DriverManager.getConnection("jdbc:MySQL://localhost:3306/2024_batch", "root", "Salman@23");
+			Connection con = getConnection();
 
 			Statement stmt = con.createStatement();
-			ResultSet resultSet = stmt.executeQuery("select * from vegetable where VEG_NAME='" + vName + "'");
+			ResultSet resultSet = stmt.executeQuery("select * from vegetable where name='" + veg_name + "'");
 
 			while (resultSet.next()) {
 				VegetableForm form = new VegetableForm(resultSet.getString(1), resultSet.getInt(2),
@@ -77,24 +93,19 @@ public class VegetableDao {
 	}
 
 	public List<VegetableForm> selectAllVegetables() throws SQLException {
-		System.out.println("VegetableDao selectAllVegetable(-)");
+		System.out.println("VegetableDao selectAllVegetables(-)");
 
 		List<VegetableForm> vegetableList = new ArrayList<>();
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/2024_batch", "root", "Salman@23");
+			Connection con = getConnection();
 			Statement stmt = con.createStatement();
 			ResultSet resultSet = stmt.executeQuery("SELECT * FROM vegetable");
 
 			while (resultSet.next()) {
-				// Create a new VegetableForm object and populate it
-				VegetableForm vegetable = new VegetableForm();
-				vegetable.setVegName(resultSet.getString(1));
-				vegetable.setVegQty(resultSet.getInt(2));
-				vegetable.setVegPrice(resultSet.getDouble(3));
-
-				// Add the vegetable to the list
+				
+				VegetableForm vegetable = new VegetableForm(resultSet.getString(1),resultSet.getInt(2),resultSet.getDouble(3));
 				vegetableList.add(vegetable);
 			}
 
@@ -105,21 +116,5 @@ public class VegetableDao {
 
 	}
 
-	public int updateVegetablesItem(String name, int qty, double price) {
-		int rowsUpdated = 0;
-		try {
-			con = getConnection();
-			PreparedStatement preparedStatement = con
-					.prepareStatement("UPDATE vegetable SET qty = ?, price = ? WHERE VEG_NAME = ?");
-			preparedStatement.setInt(1, qty);
-			preparedStatement.setDouble(2, price);
-			preparedStatement.setString(3, name);
-
-			rowsUpdated = preparedStatement.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return rowsUpdated;
-	}
 
 }

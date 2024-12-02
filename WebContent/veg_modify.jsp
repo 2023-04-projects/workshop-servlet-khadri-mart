@@ -15,7 +15,7 @@
 </head>
 <body>
 	<h2>Search Vegetable Item</h2>
-	<form action="vegModify" method="get">
+	<form action="vegModify" method="post">
 		<table>
 			<tr>
 				<td>Item Name: <input type="text" name="veg_name"></td>
@@ -32,7 +32,6 @@
 		if (searchName != null && !searchName.isEmpty()) {
 			ServletContext context = application;
 			VegetableDao dao = new VegetableDao(context);
-			listOfVegetables = dao.selectVegetables(searchName);
 
 		}
 	%>
@@ -49,7 +48,8 @@
 				for (VegetableForm eachForm : listOfVegetables) {
 			%>
 			<tr>
-				<td><a href="veg_modify_page.jsp" target="bottom_right"> <%=eachForm.getVegName()%>
+				<td><a href="veg_modify_page.jsp?item_name=<%= eachForm.getVegName() %>&item_qty=<%= eachForm.getVegQty() %>&item_price=<%= eachForm.getVegPrice() %>" target="bottom_right"> 
+                            <%= eachForm.getVegName() %> 
 				</a></td>
 				<td><%=eachForm.getVegQty()%></td>
 				<td><%=eachForm.getVegPrice()%></td>
@@ -67,7 +67,5 @@
 			%>
 		</tbody>
 	</table>
-
-
 </body>
 </html>

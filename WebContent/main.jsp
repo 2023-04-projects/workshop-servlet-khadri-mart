@@ -53,7 +53,7 @@
 					class="bottom-left-frame"></iframe>
 				<iframe name="bottom_left_cos" src="bottom_left_cos.jsp"
 					class="bottom-left-frame"></iframe>
-				<iframe name="bottom_left_cos" src="bottom_left_veg.jsp"
+				<iframe name="bottom_left_veg" src="bottom_left_veg.jsp"
 					class="bottom-left-frame"></iframe>
 			</div>
 			<div class="right-pane">

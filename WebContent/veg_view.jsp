@@ -4,51 +4,29 @@
 <%@ page import="com.khadri.mart.vegetable.form.VegetableForm"%>
 <%@ page import="java.util.*"%>
 
+	<%
+		ServletContext context = application;
+
+		VegetableDao vegetableDao = new VegetableDao(context);
+		List<VegetableForm> listofData = new ArrayList<>();
+		
+		String searchName = request.getParameter("veg_name");
+
+		if (searchName != null && !searchName.trim().isEmpty()) {
+			listofData  = vegetableDao.selectVegetables(searchName.trim());
+	%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Vegetable List</title>
-<style>
-table {
-	width: 50%;
-	border-collapse: collapse;
-}
-
-table, th, td {
-	border: 1px solid black;
-}
-
-th, td {
-	padding: 10px;
-	text-align: left;
-}
-</style>
+<link rel='stylesheet' type='text/css' href='styles.css' />
+    <title>View Vegetable Items</title>
 </head>
 <body>
-<%
-	String vName = request.getParameter("vName");
-
-	if (vName != null && !vName.trim().isEmpty()) {
-		// Call the DAO method to get the vegetable data
-		VegetableDao vegetableDao = new VegetableDao();
-		List<VegetableForm> vegetableList = vegetableDao.selectVegetables(vName);
-
-		if (vegetableList.isEmpty()) {
-		}
-%>
-
-<p>
-	No vegetables found for the name "<%=vName%>".
-</p>
-<%
-	} else {
-%>
-	<h1>Vegetable List</h1>
-	<form action="vegetables.jsp" method="get">
-		<label for="vName">Vegetable Name:</label> <input type="text"
-			id="vName" name="vName" required>
-		<button type="submit">Search</button>
+	<h1> View Vegetables </h1>
+	<form action="vegView" method="get">
+		<label for="veg_name">Vegetable Name:</label> 
+		<input type="text" id="veg_name" name="veg_name">
+		<input type="submit" value = "Search_Items">
 	</form>
 	<table border="1">
 		<thead>
@@ -59,14 +37,14 @@ th, td {
 			</tr>
 			<%
 				// Loop through the list and display the vegetables
-					for (VegetableForm vegetable : vegetableList) {
+					for (VegetableForm eachForm : listofData ) {
 			%>
 
 
 			<tr>
-				<td><%=vegetable.getVegName()%></td>
-				<td><%=vegetable.getVegQty()%></td>
-				<td><%=vegetable.getVegPrice()%></td>
+				<td><%=eachForm.getVegName()%></td>
+				<td><%=eachForm.getVegQty()%></td>
+				<td><%=eachForm.getVegPrice()%></td>
 			</tr>
 
 			<%

@@ -18,22 +18,19 @@
 		<table border="1">
 			<tbody>
 				<tr>
-					<td>Vegetable Name: <input type="text" name="veg_name"
-						value="<%=name%>" readonly>
+					<td>Vegetable Name: <input type="text" name="veg_name" value="<%=name%>" readonly>
 					</td>
 				</tr>
 				<tr>
-					<td>Vegetable Qty: <input type="text" name="veg_qty" id="qty"
-						value="<%=qty%>">
+					<td>Vegetable Qty: <input type="text" name="veg_qty" id="qty" value="<%=qty%>">
 					</td>
 				</tr>
 				<tr>
-					<td>Vegetable Price: <input type="text" name="veg_price"
-						id="price" value="<%=price%>">
+					<td>Vegetable Price: <input type="text" name="veg_price" id="price" value="<%=price%>">
 					</td>
 				</tr>
 				<tr>
-					<td><input type="submit" value="Modify Vegetables"></td>
+					<td><input type="submit" value="Modify"></td>
 				</tr>
 			</tbody>
 		</table>

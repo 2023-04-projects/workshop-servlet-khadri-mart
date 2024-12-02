@@ -7,26 +7,22 @@
 </head>
 <body>
 <table>
-		<thead>
-			<h2>Vegetables details</h2>
-		</thead>
-		<tbody>
+			<h2>Vegetable details</h2>
 			<tr>
-				<td><a href="bottom_right_gro_add.html" target="bottom_right">add</a></td>
+				<td><a href="veg_add.jsp" target="bottom_right">add</a></td>
 			</tr>
 			<tr>
-				<td><a href="bottom_right_gro_modify.html"
+				<td><a href="veg_modify.jsp"
 					target="bottom_right">modify</a></td>
 			</tr>
 			<tr>
-				<td><a href="bottom_right_gro_view.html" target="bottom_right">view
+				<td><a href="veg_view.jsp" target="bottom_right">view
 				</a></td>
 			</tr>
 			<tr>
-				<td><a href="bottom_right_gro_viewall.html"
+				<td><a href="veg_viewall.jsp"
 					target="bottom_right">viewall</a></td>
 			</tr>
-		</tbody>
 	</table>
 </body>
 </html>
