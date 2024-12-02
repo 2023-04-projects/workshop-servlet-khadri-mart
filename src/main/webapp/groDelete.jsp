@@ -52,15 +52,8 @@
                 </tr>
             <%
                 }
-                if (listOfGrossaries.isEmpty()) {
             %>
-			<tr>
-				<td colspan="4">No items found for "<%=searchName%>".
-				</td>
-			</tr>
-			<%
-				}
-			%>
+			
 		</tbody>
 	</table>
 </body>

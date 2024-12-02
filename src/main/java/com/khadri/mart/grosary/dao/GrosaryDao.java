@@ -18,6 +18,10 @@ public class GrosaryDao {
 	private String Url;
 	private String User;
 	private String Password;
+	PreparedStatement pstmt ;
+	Statement stmt;
+
+
 
 	public GrosaryDao(ServletContext context) {
 		this.Url = context.getInitParameter("Url");
@@ -33,7 +37,6 @@ public class GrosaryDao {
 	public int insertGrosary(GrosaryForm form) {
 		System.out.println("GrosaryDao insertGrosary(-)");
 		int result = 0;
-		PreparedStatement pstmt = null;
 		try {
 			con = getConnection();
 
@@ -47,7 +50,7 @@ public class GrosaryDao {
 		} catch (Exception e) {
 			System.out.println("Exception occured" + e.getMessage());
 		} finally {
-			System.out.println();
+			System.out.println("Executed finally block");
 			try {
 				pstmt.close();
 				if (con != null)
@@ -63,7 +66,6 @@ public class GrosaryDao {
 	public List<GrosaryForm> selectGrosary(String Name) {
 		System.out.println("GrosaryDao selectGrosary(-)");
 		List<GrosaryForm> listOfData = new ArrayList<>();
-		Statement stmt = null;
 		try {
 			con = getConnection();
 			stmt = con.createStatement();
@@ -77,7 +79,7 @@ public class GrosaryDao {
 		} catch (Exception e) {
 			System.out.println("Exception occured" + e.getMessage());
 		} finally {
-			System.out.println();
+			System.out.println("Executed finally block");
 			try {
 				stmt.close();
 				if (con != null)
@@ -93,7 +95,6 @@ public class GrosaryDao {
 
 	public int updateGrosary(GrosaryForm form) {
 		System.out.println("GrosaryDao updateGrosary(-)");
-		PreparedStatement pstmt = null;
 		int result = 0;
 
 		try {
@@ -112,7 +113,7 @@ public class GrosaryDao {
 			System.out.println("Exception occured" + e.getMessage());
 			e.printStackTrace();
 		} finally {
-			System.out.println();
+			System.out.println("Executed finally block");
 			try {
 				pstmt.close();
 				if (con != null)
@@ -129,7 +130,6 @@ public class GrosaryDao {
 	public List<GrosaryForm> selectAllGrosary() {
 		System.out.println("GrosaryDao selectAllGrosary(-)");
 		List<GrosaryForm> listOfGrossary = new ArrayList<>();
-		Statement stmt = null;
 		try {
 			con = getConnection();
 
@@ -144,7 +144,7 @@ public class GrosaryDao {
 		} catch (Exception e) {
 			System.out.println("Exception occured" + e.getMessage());
 		} finally {
-			System.out.println();
+			System.out.println("Executed finally block");
 			try {
 				stmt.close();
 				if (con != null)
@@ -161,7 +161,6 @@ public class GrosaryDao {
 	public int deleteGrosary(String name) {
 		System.out.println("GrosaryDao deleteGrosary(-)");
 		int result = 0;
-		PreparedStatement pstmt = null;
 		try {
 			con = getConnection();
 
@@ -172,7 +171,7 @@ public class GrosaryDao {
 		} catch (Exception e) {
 			System.out.println("Exception occurred: " + e.getMessage());
 		} finally {
-			System.out.println();
+			System.out.println("Executed finally block");
 			try {
 				pstmt.close();
 				if (con != null)

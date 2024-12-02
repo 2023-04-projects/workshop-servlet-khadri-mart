@@ -3,19 +3,6 @@
 <%@ page import="java.util.*"%>
 <%@ page import="com.khadri.mart.grosary.dao.GrosaryDao"%>
 <%@ page import="com.khadri.mart.grosary.form.GrosaryForm"%>
-<!DOCTYPE html>
-<html>
-<head>
- <link rel='stylesheet' type='text/css' href='styles.css' />
- <title>View Grocery Items</title>
-</head>
-<body>
-	<h2>View Grocery Items</h2>
-	<form action="grosary_view" method="get">
-		<label for="name">Grocery Name:</label> <input type="text"
-			id="name" name="name"> <input type="submit"
-			value="Search">
-	</form>
 	<%
 	ServletContext context = application;
 		GrosaryDao dao = new GrosaryDao(context);
@@ -29,6 +16,19 @@
 		}
 		System.out.println("List Size: " + listOfGrossaries.size());
 	%>
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel='stylesheet' type='text/css' href='styles.css' />
+ <title>View Grocery Items</title>
+</head>
+<body>
+	<h2>View Grocery Items</h2>
+	<form action="grosary_view" method="get">
+		<label for="name">Grocery Name:</label> <input type="text"
+			id="name" name="name"> <input type="submit"
+			value="Search">
+	</form>
 
 	<table border="1">
 		<thead>
@@ -49,15 +49,8 @@
 			</tr>
 			<%
 				}
-				if (listOfGrossaries.isEmpty()) {
 			%>
-			<tr>
-				<td colspan="3">No items found for "<%=searchName%>".
-				</td>
-			</tr>
-			<%
-				}
-			%>
+			
 		</tbody>
 	</table>
 </body>

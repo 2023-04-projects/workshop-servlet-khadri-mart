@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java"%>
 <html>
 <head>
 	<link rel='stylesheet' type='text/css' href='styles.css' />
@@ -5,7 +6,7 @@
    <body>
 	<div align="center">
 	 <table>
-           <h1 style ="color:red;">KADRI MART</h1>
+           <h1 style ="color:green;">KADRI MART</h1>
 	 </table>
 	</div>
 	

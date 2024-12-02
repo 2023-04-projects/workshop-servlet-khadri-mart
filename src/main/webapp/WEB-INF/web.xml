@@ -16,36 +16,20 @@
 		<url-pattern>/groadd</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>gromodify</servlet-name>
-		<servlet-class>com.khadri.mart.grosary.servlet.ModifyGrosaryServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>gromodify</servlet-name>
-		<url-pattern>/gromodify</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>grodelete</servlet-name>
-		<servlet-class>com.khadri.mart.grosary.servlet.DeleteGrosaryServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>grodelete</servlet-name>
-		<url-pattern>/grodelete</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>jspview</servlet-name>
-		<jsp-file>/groView.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>jspview</servlet-name>
-		<url-pattern>/grosary_view</url-pattern>
-	</servlet-mapping>
-	<servlet>
 		<servlet-name>jspadd</servlet-name>
 		<jsp-file>/groAdd.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>jspadd</servlet-name>
 		<url-pattern>/grosary_add</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>gromodify</servlet-name>
+		<servlet-class>com.khadri.mart.grosary.servlet.ModifyGrosaryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>gromodify</servlet-name>
+		<url-pattern>/gromodify</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>modifyJsp</servlet-name>
@@ -63,15 +47,14 @@
 		<servlet-name>modifypageJsp</servlet-name>
 		<url-pattern>/grosary_modify_page</url-pattern>
 	</servlet-mapping>
-    <servlet>
-		<servlet-name>deletepageJsp</servlet-name>
-		<jsp-file>/grosary_delete_page.jsp</jsp-file>
+	<servlet>
+		<servlet-name>jspview</servlet-name>
+		<jsp-file>/groView.jsp</jsp-file>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>deletepageJsp</servlet-name>
-		<url-pattern>/grosary_delete_page</url-pattern>
+		<servlet-name>jspview</servlet-name>
+		<url-pattern>/grosary_view</url-pattern>
 	</servlet-mapping>
-    
 	<servlet>
 		<servlet-name>groviewallJsp</servlet-name>
 		<jsp-file>/groViewAll.jsp</jsp-file>
@@ -79,6 +62,22 @@
 	<servlet-mapping>
 		<servlet-name>groviewallJsp</servlet-name>
 		<url-pattern>/grosary_viewAll</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>grodelete</servlet-name>
+		<servlet-class>com.khadri.mart.grosary.servlet.DeleteGrosaryServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>grodelete</servlet-name>
+		<url-pattern>/grodelete</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>deletepageJsp</servlet-name>
+		<jsp-file>/grosary_delete_page.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deletepageJsp</servlet-name>
+		<url-pattern>/grosary_delete_page</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>jspDelete</servlet-name>
@@ -92,12 +91,10 @@
 		<param-name>Url</param-name>
 		<param-value>jdbc:mysql://localhost:3306/2024_batch</param-value>
 	</context-param>
-
 	<context-param>
 		<param-name>User</param-name>
 		<param-value>root</param-value>
 	</context-param>
-
 	<context-param>
 		<param-name>Password</param-name>
 		<param-value>root</param-value>

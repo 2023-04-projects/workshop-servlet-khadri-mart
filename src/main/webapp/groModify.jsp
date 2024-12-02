@@ -3,6 +3,15 @@
 <%@ page import="com.khadri.mart.grosary.form.GrosaryForm" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+    <%	
+        String searchName = request.getParameter("name");
+        List<GrosaryForm> listOfGrossaries = new ArrayList<>();
+        if (searchName != null && !searchName.isEmpty()) {
+        	ServletContext context = application;
+            GrosaryDao dao = new GrosaryDao(context);
+            listOfGrossaries = dao.selectGrosary(searchName);
+        }
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,15 +32,6 @@
         </table>
     </form>
     <br>
-    <%	
-        String searchName = request.getParameter("name");
-        List<GrosaryForm> listOfGrossaries = new ArrayList<>();
-        if (searchName != null && !searchName.isEmpty()) {
-        	ServletContext context = application;
-            GrosaryDao dao = new GrosaryDao(context);
-            listOfGrossaries = dao.selectGrosary(searchName);
-        }
-    %>
     <table border="1">
         <thead>
             <tr>
@@ -55,14 +55,8 @@
                 </tr>
             <%
                 }
-                if (listOfGrossaries.isEmpty()) {
             %>
-                <tr>
-                    <td colspan="3">No items found for "<%= searchName %>".</td>
-                </tr>
-            <%
-                }
-            %>
+                
         </tbody>
     </table>
 </body>
