@@ -17,17 +17,17 @@
             <tbody>
                 <tr>
                     <td>
-                        Name: <input type="text" name="name" value="<%= name %>" readonly>
+                        Name: <input type="text" name="item_name" value="<%= name %>" readonly>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Quantity: <input type="text" name="qty" id="qty" value="<%= qty %>">
+                        Quantity: <input type="text" name="item_qty" id="qty" value="<%= qty %>">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Price: <input type="text" name="price" id="price" value="<%= price %>">
+                        Price: <input type="text" name="item_price" id="price" value="<%= price %>">
                     </td>
                 </tr>
                 <tr>
