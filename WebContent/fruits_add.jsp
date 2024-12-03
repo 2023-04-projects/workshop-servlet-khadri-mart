@@ -16,7 +16,7 @@
 <body>
 <table border="3"> 
     <h2>Add Fruits </h2>
-    <form action="fruadd" method="post">
+    <form action="fruitsadd" method="post">
         <label for="item_name"> Name:</label><br>
         <input type="text" id="item_name" name="item_name" required><br><br>
 

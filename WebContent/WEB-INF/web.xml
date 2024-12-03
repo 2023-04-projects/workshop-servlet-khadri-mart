@@ -9,12 +9,12 @@
 		<welcome-file>main.jsp</welcome-file>
 	</welcome-file-list>
 	<servlet>
-		<servlet-name>fruadd</servlet-name>
+		<servlet-name>fruitsaddservlet</servlet-name>
 		<servlet-class>com.khadri.mart.fruits.servlet.FruitsAddServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>fruadd</servlet-name>
-		<url-pattern>/fruadd</url-pattern>
+		<servlet-name>fruitsaddservlet</servlet-name>
+		<url-pattern>/fruitsadd</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>fruitsmodifyservlet</servlet-name>
