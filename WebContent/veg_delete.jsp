@@ -8,11 +8,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link rel='stylesheet' type='text/css' href='styles.css' />
+
 <title>Delete page</title>
 </head>
 <body>
 <h2>Search Vegetable Item</h2>
-	<form action="vegDelete" method="post">
+	<form action="veg_delete" method="post">
 		<table>
 			<tr>
 				<td>Vegetable Name: <input type="text" name="veg_name"></td>
@@ -45,7 +47,7 @@
 				for (VegetableForm eachForm : listOfVegetables) {
 			%>
 			<tr>
-				<td><a href="veg_delete_page.jsp?item_name=<%= eachForm.getVegName() %>&item_qty=<%= eachForm.getVegQty() %>&item_price=<%= eachForm.getVegPrice() %>" target="bottom_right"> 
+				<td><a href="veg_delete_page.jsp?vegName=<%= eachForm.getVegName() %>&vegQqty=<%= eachForm.getVegQty() %>&vegPrice=<%= eachForm.getVegPrice() %>" target="bottom_right"> 
                             <%= eachForm.getVegName() %> 
 				</a></td>
 				<td><%=eachForm.getVegQty()%></td>
@@ -64,6 +66,5 @@
 			%>
 		</tbody>
 	</table>
-
 </body>
 </html>

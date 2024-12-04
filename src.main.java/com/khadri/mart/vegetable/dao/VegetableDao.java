@@ -13,15 +13,14 @@ import javax.servlet.ServletContext;
 
 import com.khadri.mart.vegetable.form.VegetableForm;
 
-
 public class VegetableDao {
 
 	private Connection con;
 	private String Url;
 	private String User;
 	private String Password;
-	PreparedStatement pstmt;
-	Statement stmt;
+	private PreparedStatement pstmt;
+	private Statement stmt;
 
 	public VegetableDao(ServletContext context) {
 		this.Url = context.getInitParameter("Url");
@@ -30,6 +29,7 @@ public class VegetableDao {
 	}
 
 	private Connection getConnection() throws Exception {
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		return DriverManager.getConnection(Url, User, Password);
 	}
 
@@ -37,7 +37,6 @@ public class VegetableDao {
 		System.out.println("VegetableDao insertVegetables(-)");
 		int result = 0;
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = getConnection();
 			pstmt = con.prepareStatement("insert into vegetable values(?,?,?)");
 			pstmt.setString(1, form.getVegName());
@@ -61,9 +60,10 @@ public class VegetableDao {
 	}
 
 	public int updateVegetables(VegetableForm form) {
+		System.out.println("VegetableDao updateVegetables(-,-)");
+
 		int result = 0;
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = getConnection();
 			pstmt = con.prepareStatement("UPDATE vegetable SET qty = ?, price = ? WHERE name = ?");
 			pstmt.setInt(1, form.getVegQty());
@@ -90,14 +90,14 @@ public class VegetableDao {
 		System.out.println("VegetableDao selectVegetables(-)");
 		List<VegetableForm> listOfData = new ArrayList<>();
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = getConnection();
 
 			stmt = con.createStatement();
 			ResultSet resultSet = stmt.executeQuery("select * from vegetable where name='" + veg_name + "'");
 
 			while (resultSet.next()) {
-				VegetableForm form = new VegetableForm(resultSet.getString(1), resultSet.getInt(2), resultSet.getDouble(3));
+				VegetableForm form = new VegetableForm(resultSet.getString(1), resultSet.getInt(2),
+						resultSet.getDouble(3));
 				listOfData.add(form);
 			}
 
@@ -116,18 +116,19 @@ public class VegetableDao {
 		return listOfData;
 
 	}
+
 	public List<VegetableForm> selectAllVegetables() {
 		System.out.println("VegetableDao selectAllVegetables(-)");
 		List<VegetableForm> listOfvegetables = new ArrayList<>();
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = getConnection();
 
 			stmt = con.createStatement();
 			ResultSet resultSet = stmt.executeQuery("select * from vegetable");
 
 			while (resultSet.next()) {
-				VegetableForm form = new VegetableForm(resultSet.getString(1), resultSet.getInt(2), resultSet.getDouble(3));
+				VegetableForm form = new VegetableForm(resultSet.getString(1), resultSet.getInt(2),
+						resultSet.getDouble(3));
 				listOfvegetables.add(form);
 			}
 
@@ -151,7 +152,6 @@ public class VegetableDao {
 		System.out.println("VegetableDao deleteVegetable(-,-)");
 		int result = 0;
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = getConnection();
 
 			pstmt = con.prepareStatement("DELETE FROM vegetable WHERE name = ?");
@@ -175,4 +175,3 @@ public class VegetableDao {
 	}
 
 }
-

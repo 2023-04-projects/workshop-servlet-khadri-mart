@@ -27,11 +27,11 @@ public class AddVegetableServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("Entered into AddVegetableServlet doPost(-,-)");
-		String name = req.getParameter("veg_name");
-		String qty = req.getParameter("veg_qty");
-		String price = req.getParameter("veg_price");
+		String vegName = req.getParameter("veg_name");
+		String vegQty = req.getParameter("veg_qty");
+		String vegPrice = req.getParameter("veg_price");
 
-		VegetableForm form = new VegetableForm(name, Integer.parseInt(qty), Double.parseDouble(price));
+		VegetableForm form = new VegetableForm(vegName, Integer.parseInt(vegQty), Double.parseDouble(vegPrice));
 		int result = dao.insertVegetables(form);
 
 		PrintWriter pw = resp.getWriter();

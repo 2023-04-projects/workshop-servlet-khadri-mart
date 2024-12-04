@@ -8,7 +8,7 @@
 <body>
 	<div align="center">
 		<table>
-			<h1 style="color: red;">KADRI MART</h1>
+			<h1 style="color: green;">KADRI MART</h1>
 		</table>
 	</div>
 </body>

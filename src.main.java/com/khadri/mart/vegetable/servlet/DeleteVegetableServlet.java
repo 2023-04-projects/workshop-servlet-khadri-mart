@@ -25,12 +25,12 @@ public class DeleteVegetableServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		System.out.println("Entered into DeleteVegetableServlet doPost(-,-)");
 
-		String name = req.getParameter("veg_name");
+		String vegName = req.getParameter("veg_name");
 		
-		System.out.println("Received 'name' parameter: " + name);
+		System.out.println("Received 'name' parameter: " + vegName);
 		
-		if (name != null && !name.isEmpty()) {
-			int result = dao.deleteVegetables(name);
+		if (vegName != null && !vegName.isEmpty()) {
+			int result = dao.deleteVegetables(vegName);
 
 			if (result > 0) {
 				resp.getWriter().println("Vegetables item deleted successfully.");

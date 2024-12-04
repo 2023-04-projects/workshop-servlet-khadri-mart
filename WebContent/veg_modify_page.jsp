@@ -10,23 +10,23 @@
 </head>
 <body>
 	<%
-		String name = request.getParameter("veg_name");
-		String qty = request.getParameter("veg_qty");
-		String price = request.getParameter("veg_price");
+		String vegName = request.getParameter("veg_name");
+		String vegQty = request.getParameter("veg_qty");
+		String vegPrice = request.getParameter("veg_price");
 	%>
-	<form action="vegModify" method="post">
+	<form action="vegModify" method="get">
 		<table border="1">
 			<tbody>
 				<tr>
-					<td>Vegetable Name: <input type="text" name="veg_name" value="<%=name%>" readonly>
+					<td>Vegetable Name: <input type="text" name="veg_name" value="<%=vegName%>" readonly>
 					</td>
 				</tr>
 				<tr>
-					<td>Vegetable Qty: <input type="text" name="veg_qty" id="qty" value="<%=qty%>">
+					<td>Vegetable Qty: <input type="text" name="veg_qty" id="qty" value="<%=vegQty%>">
 					</td>
 				</tr>
 				<tr>
-					<td>Vegetable Price: <input type="text" name="veg_price" id="price" value="<%=price%>">
+					<td>Vegetable Price: <input type="text" name="veg_price" id="price" value="<%=vegPrice%>">
 					</td>
 				</tr>
 				<tr>
@@ -35,6 +35,5 @@
 			</tbody>
 		</table>
 	</form>
-
 </body>
 </html>

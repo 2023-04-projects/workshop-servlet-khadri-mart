@@ -31,7 +31,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>modify</servlet-name>
-		<url-pattern>/veg_modify</url-pattern>
+		<url-pattern>/vegModify</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>vegmodifyJsp</servlet-name>
@@ -39,7 +39,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>vegmodifyJsp</servlet-name>
-		<url-pattern>/vegModify</url-pattern>
+		<url-pattern>/veg_modify</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -66,7 +66,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>vegdelete</servlet-name>
-		<url-pattern>/vegDelete</url-pattern>
+		<url-pattern>/veg_delete</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>vegdeleteJsp</servlet-name>
@@ -74,7 +74,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>vegdeleteJsp</servlet-name>
-		<url-pattern>/veg_delete</url-pattern>
+		<url-pattern>/vegDelete</url-pattern>
 	</servlet-mapping>
 	
 	<context-param>

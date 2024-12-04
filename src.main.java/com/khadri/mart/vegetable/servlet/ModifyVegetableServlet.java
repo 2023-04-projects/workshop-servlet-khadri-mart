@@ -15,6 +15,7 @@ public class ModifyVegetableServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private VegetableDao dao;
+	PrintWriter pw;
 
 	@Override
 	public void init() {
@@ -22,39 +23,37 @@ public class ModifyVegetableServlet extends HttpServlet {
 		dao = new VegetableDao(context);
 	}
 
-	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		System.out.println("Entered into ModifyVegetableServlet doPost(-,-)");
-
-		String name = req.getParameter("veg_name");
-		String qty = req.getParameter("veg_qty");
-		String price = req.getParameter("veg_price");
-
-		if (qty != null && !qty.isEmpty()) {
+		String vegName = req.getParameter("veg_name");
+		String vegQty = req.getParameter("veg_qty");
+		String vegPrice = req.getParameter("veg_price");
+		if (vegQty != null && !vegQty.isEmpty()) {
 			try {
-				Integer.parseInt(qty);
-			} catch (NumberFormatException e) {
-				e.printStackTrace();
-				System.out.println("Invalid qty format.");
-			}
-		} else {
-			System.out.println("veg qty parameter is missing or empty.");
-		}
-		if (price != null && !price.isEmpty()) {
-			try {
-				Double.parseDouble(price);
+				Integer.parseInt(vegQty);
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
 				System.out.println("Invalid price format.");
 			}
 		} else {
-			System.out.println("veg price parameter is missing or empty.");
+			System.out.println("parameter is missing or empty.");
 		}
-		VegetableForm form = new VegetableForm(name,Integer.parseInt(qty),Double.parseDouble(price));
+		if (vegPrice != null && !vegPrice.isEmpty()) {
+			try {
+				Double.parseDouble(vegPrice);
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
+				System.out.println("Invalid price format.");
+			}
+		} else {
+			System.out.println("price parameter is missing or empty.");
+		}
+		VegetableForm form = new VegetableForm(vegName, Integer.parseInt(vegQty), Double.parseDouble(vegPrice));
+
 		int result = dao.updateVegetables(form);
 		PrintWriter pw = resp.getWriter();
 		if (result > 0) {
-			pw.println(result + " Vegetable updated successfully");
+			pw.println(result + " vegetable updated successfully");
 		} else {
 			pw.println("####### Something went wrong #######");
 		}

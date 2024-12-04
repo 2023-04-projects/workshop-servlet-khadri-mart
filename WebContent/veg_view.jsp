@@ -5,13 +5,14 @@
 <%@ page import="java.util.*"%>
 
 	<%
-	String searchName = request.getParameter("veg_name");
-	List<VegetableForm> listOfVegetables = new ArrayList<>();
-	if (searchName != null && !searchName.isEmpty()) {
 		ServletContext context = application;
 		VegetableDao dao = new VegetableDao(context);
+	List<VegetableForm> listOfVegetables = new ArrayList<>();
+	String searchName = request.getParameter("veg_name");
+	System.out.println("Search Parameter: " + searchName);
+	if (searchName != null && !searchName.isEmpty()) {
 		listOfVegetables = dao.selectVegetables(searchName);
-	
+	}
 	%>
 <!DOCTYPE html>
 <html>
@@ -33,6 +34,8 @@
 				<th>Quantity</th>
 				<th>Price</th>
 			</tr>
+			</thead>
+			<tbody>
 			<%
 				// Loop through the list and display the vegetables
 					for (VegetableForm eachForm : listOfVegetables ) {
@@ -49,13 +52,11 @@
 			if (listOfVegetables.isEmpty() && searchName != null) {
 			%>
 			<tr>
-				<td colspan="3">No items found for "<%=searchName%>".
-				</td>
+				<td colspan="3">No items found for "<%=searchName%>".</td>
 			</tr>
 
 			<%
 				}
-	}
 			%>
 		
 		</tbody>

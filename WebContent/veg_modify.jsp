@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="com.khadri.mart.vegetable.form.VegetableForm"%>
-<%@page import="com.khadri.mart.vegetable.dao.VegetableDao"%>
-<%@ page import="java.util.List"%>
-<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.khadri.mart.vegetable.dao.VegetableDao"%>
+<%@ page import="com.khadri.mart.vegetable.form.VegetableForm"%>
+<%@ page import="java.util.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<link rel='stylesheet' type='text/css' href='styles.css' />
 <title>Modify Vegetable Items</title>
+<link rel='stylesheet' type='text/css' href='styles.css' />
+
 </head>
 <body>
 	<h2>Search Vegetable Item</h2>
@@ -32,7 +33,6 @@
 			listOfVegetables = dao.selectVegetables(searchName);
 		}
 	%>
-
 	<table border="1">
 		<thead>
 			<tr>
@@ -46,15 +46,13 @@
 				for (VegetableForm eachForm : listOfVegetables) {
 			%>
 			<tr>
-				<td><a
-					href="veg_modify_page.jsp?item_name=<%=eachForm.getVegName()%>&item_qty=<%=eachForm.getVegQty()%>&item_price=<%=eachForm.getVegPrice()%>"
-					target="bottom_right"> <%=eachForm.getVegName()%>
+				<td><a href="veg_modify_page.jsp?vegName=<%= eachForm.getVegName() %>&vegQqty=<%= eachForm.getVegQty() %>&vegPrice=<%= eachForm.getVegPrice() %>" target="bottom_right"> 
+                            <%= eachForm.getVegName() %> 
 				</a></td>
 				<td><%=eachForm.getVegQty()%></td>
 				<td><%=eachForm.getVegPrice()%></td>
 			</tr>
 			<%
-				}
 				if (listOfVegetables.isEmpty() && searchName != null) {
 			%>
 			<tr>
@@ -63,8 +61,10 @@
 			</tr>
 			<%
 				}
+				}
 			%>
 		</tbody>
 	</table>
+
 </body>
 </html>
