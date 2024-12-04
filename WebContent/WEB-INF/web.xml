@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>jsp-app1</display-name>
-  
-  <welcome-file-list>
-    <welcome-file>main.html</welcome-file>
-  </welcome-file-list>
-  
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>workshop-servlet-khadri-mart</display-name>
+
+	<welcome-file-list>
+		<welcome-file>main.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>cosmoticaddservlet</servlet-name>
+		<servlet-class>com.khadri.mart.cosmotic.servlet.AddCosmoticServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmosticaddservlet</servlet-name>
+		<url-pattern>/cosadd</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>cosmosticmodifyservlet</servlet-name>
+		<servlet-class>com.khadri.mart.cosmotic.servlet.ModifyCosmoticServlet.java</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmosticmodifyservlet</servlet-name>
+		<url-pattern>/cosmodify</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>cosmosticdeleteservlet</servlet-name>
+		<servlet-class>com.khadri.mart.cosmotic.servlet.DeleteCosmoticServlet.java</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmosticdeleteservlet</servlet-name>
+		<url-pattern>/cosdelete</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>cosmosticaddJsp</servlet-name>
+		<jsp-file>/cosmotic_add.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmoticaddJsp</servlet-name>
+		<url-pattern>/cos_add</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>cosmoticmodifysearchJsp</servlet-name>
+		<jsp-file>/cosmotic_modify_search.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmoticmodifysearchJsp</servlet-name>
+		<url-pattern>/cos_modify_search</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>cosmoticmodifyJsp</servlet-name>
+		<jsp-file>/cosmotic_modify.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmoticmodifyJsp</servlet-name>
+		<url-pattern>/cos_modify</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>cosmoticviewJsp</servlet-name>
+		<jsp-file>/cosmotic_view.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmoticviewJsp</servlet-name>
+		<url-pattern>/cos_view</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>cosmoticviewallJsp</servlet-name>
+		<jsp-file>/cosmotic_viewall.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmoticviewallJsp</servlet-name>
+		<url-pattern>/cos_viewAll</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>cosmoticdeletesearchJsp</servlet-name>
+		<jsp-file>/cosmotic_delete_search.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmoticdeletesearchJsp</servlet-name>
+		<url-pattern>/cosmotic_delete_search</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>cosmoticdeleteJsp</servlet-name>
+		<jsp-file>/cosmotic_delete.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>cosmoticdeleteJsp</servlet-name>
+		<url-pattern>/cos_delete</url-pattern>
+	</servlet-mapping>
+	<context-param>
+		<param-name>Url</param-name>
+		<param-value>jdbc:mysql://localhost:3306/2024_batch</param-value>
+	</context-param>
+	<context-param>
+		<param-name>User</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<context-param>
+		<param-name>Password</param-name>
+		<param-value>ruhi@9022</param-value>
+	</context-param>
 </web-app>
